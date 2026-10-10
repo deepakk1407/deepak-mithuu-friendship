@@ -636,10 +636,26 @@ function listenToChat() {
   );
 }
 
-$("send-btn").addEventListener("click", sendChat);
+const sendButton = $("send-btn");
+const chatInput = $("chat-input");
 
-$("chat-input").addEventListener("keydown", (event) => {
-  if (event.key === "Enter") sendChat();
-});
+if (!sendButton || !chatInput) {
+  console.error("Chat elements missing:", {
+    sendButtonFound: !!sendButton,
+    chatInputFound: !!chatInput
+  });
+} else {
+  sendButton.addEventListener("click", () => {
+    console.log("Send button clicked");
+    sendChat();
+  });
+
+  chatInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      sendChat();
+    }
+  });
+      }
 
       
