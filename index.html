@@ -4,61 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <link rel="stylesheet" href="style.css">
-    Mithuu × Deepak ❤️</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      color: #702b50;
-      background: linear-gradient(135deg, #ffe0ed, #e7dcff);
-    }
-    .card {
-      width: 100%;
-      max-width: 420px;
-      padding: 30px 22px;
-      background: rgba(255,255,255,.85);
-      border-radius: 25px;
-      box-shadow: 0 10px 35px #b77da944;
-    }
-    .heart { font-size: 55px; }
-    h1 { color: #d63384; }
-    p { line-height: 1.7; }
-    button {
-      border: 0;
-      border-radius: 25px;
-      padding: 13px 24px;
-      background: #d63384;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <title>Mithuu × Deepak ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="card">
-    <div class="heart">🐼❤️🐼</div>
-    <h1>Mithuu × Deepak</h1>
-    <p>Oru chinna website...</p>
-    <p>Aana namma friendship-ku oru periya universe! ♾️</p>
-    <button onclick="showMessage()">Open Our Story 💌</button>
-    <p id="message"></p>
+  <main class="container">
+    <h1>🐼 Mithuu × Deepak ❤️</h1>
+    <p class="subtitle">Our Little Universe ♾️</p>
+
+    <section id="login-section">
+      <h2>Welcome, Bestie! 💗</h2>
+      <p>Login pannitu namma friendship world-kulla vaa.</p>
+
+      <input id="name" type="text" placeholder="Your name (Deepak / Mithra)">
+      <input id="email" type="email" placeholder="Email address">
+      <input id="password" type="password" placeholder="Password">
+
+      <button id="login-btn">Login 💕</button>
+      <button id="signup-btn" class="secondary">Create Account ✨</button>
+
+      <p id="auth-message" role="status"></p>
+    </section>
+
+    <section id="game-section" hidden>
+      <h2 id="welcome"></h2>
+      <p id="question"></p>
+      <textarea id="answer" placeholder="Un answer inga type pannu..."></textarea>
+      <button id="submit-answer">Submit Answer 💌</button>
+      <p id="game-message" role="status"></p>
+
+      <h2>💬 Bestie Live Chat</h2>
+      <div id="chat-messages"></div>
+      <div class="chat-row">
+        <input id="chat-input" placeholder="Message type pannu...">
+        <button id="send-btn">Send</button>
+      </div>
+      <button id="logout-btn" class="secondary">Logout</button>
+    </section>
   </main>
 
-  <script>
-    function showMessage() {
-      document.getElementById("message").textContent =
-        "Mithuu, namma friendship-ku ending-e illa! Best Friends Forever 🫂♾️";
-    }
-  </script>
+  <script type="module" src="script.js"></script>
 </body>
-  <script src="script.js"></script>
 </html>
