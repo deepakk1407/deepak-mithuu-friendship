@@ -1,0 +1,81 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #d63384;
+  --dark-pink: #8f245b;
+  --light-pink: #ffe5f0;
+  --purple: #eadfff;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: var(--dark-pink);
+  background: linear-gradient(
+    135deg,
+    var(--light-pink),
+    var(--purple)
+  );
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 22px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 12px 35px rgba(143, 36, 91, 0.15);
+}
+
+.heart {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: clamp(25px, 7vw, 34px);
+  color: var(--pink);
+  margin-bottom: 18px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+button {
+  width: 100%;
+  max-width: 260px;
+  margin-top: 12px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #d63384, #9b4de0);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--pink);
+  overflow-wrap: anywhere;
+}
