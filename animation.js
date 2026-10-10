@@ -26,10 +26,15 @@
 
       layer.appendChild(heart);
 
-      heart.addEventListener("animationend", () => {
-        heart.remove();
-      }, { once: true });
-    }
+      
+heart.addEventListener("animationend", () => {
+  heart.remove();
+});
+
+setTimeout(() => {
+  heart.remove();
+}, 15000);
+      
 
     // Start immediately
     for (let i = 0; i < 14; i++) {
