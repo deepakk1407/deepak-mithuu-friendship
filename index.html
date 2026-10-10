@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mithuu × Deepak ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #702b50;
+      background: linear-gradient(135deg, #ffe0ed, #e7dcff);
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      padding: 30px 22px;
+      background: rgba(255,255,255,.85);
+      border-radius: 25px;
+      box-shadow: 0 10px 35px #b77da944;
+    }
+    .heart { font-size: 55px; }
+    h1 { color: #d63384; }
+    p { line-height: 1.7; }
+    button {
+      border: 0;
+      border-radius: 25px;
+      padding: 13px 24px;
+      background: #d63384;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="heart">🐼❤️🐼</div>
+    <h1>Mithuu × Deepak</h1>
+    <p>Oru chinna website...</p>
+    <p>Aana namma friendship-ku oru periya universe! ♾️</p>
+    <button onclick="showMessage()">Open Our Story 💌</button>
+    <p id="message"></p>
+  </main>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").textContent =
+        "Mithuu, namma friendship-ku ending-e illa! Best Friends Forever 🫂♾️";
+    }
+  </script>
+</body>
+</html>
