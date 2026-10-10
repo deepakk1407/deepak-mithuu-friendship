@@ -636,6 +636,7 @@ function listenToChat() {
   );
 }
 
+
 const sendButton = $("send-btn");
 const chatInput = $("chat-input");
 
@@ -645,10 +646,7 @@ if (!sendButton || !chatInput) {
     chatInputFound: !!chatInput
   });
 } else {
-  sendButton.addEventListener("click", () => {
-    console.log("Send button clicked");
-    sendChat();
-  });
+  sendButton.addEventListener("click", sendChat);
 
   chatInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
@@ -656,6 +654,56 @@ if (!sendButton || !chatInput) {
       sendChat();
     }
   });
+}
+
+async function sendChat() {
+  if (!currentUser || !currentName) {
+    showMessage(gameMessage, "Please login again ❤️");
+    return;
+  }
+
+  const text = chatInput.value.trim();
+
+  if (!text) {
+    showMessage(gameMessage, "Message type pannitu send pannu ❤️");
+    chatInput.focus();
+    return;
+  }
+
+  if (text.length > 1000) {
+    showMessage(gameMessage, "1000 characters-kulla message anuppu da.");
+    return;
+  }
+
+  setBusy(sendButton, true);
+  showMessage(gameMessage, "Message sending...");
+
+  try {
+    const messageRef = await addDoc(
+      collection(db, "friendshipChat"),
+      {
+        uid: currentUser.uid,
+        name: currentName,
+        text: text,
+        createdAt: serverTimestamp()
       }
+    );
+
+    chatInput.value = "";
+    showMessage(gameMessage, "Message sent successfully ❤️");
+
+    console.log("Chat message saved:", messageRef.id);
+  } catch (error) {
+    console.error("Chat send error:", error);
+
+    showMessage(
+      gameMessage,
+      "Chat error: " + (error.code || "") + " " + error.message
+    );
+  } finally {
+    setBusy(sendButton, false);
+  }
+}
+
 
       
