@@ -275,7 +275,7 @@ function listenToGame() {
       if (myAnswer && answers[otherUid]) {
         showMessage(gameMessage, "Rendu perum answer panniteenga! Next question load aagum...");
       } else if (myAnswer) {
-        showMessage(gameMessage, `${otherName-""} answer pannura vara wait pannu ❤️`);
+      showMessage(gameMessage, `${otherName} answer pannura vara wait pannu ❤️`);
       } else {
         showMessage(gameMessage, "Un answer type panni submit pannu 💌");
       }
